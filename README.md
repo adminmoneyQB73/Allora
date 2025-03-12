@@ -40,15 +40,19 @@ git checkout v0.8.3
 make install
 ```
 
-# config and init app
+**config and init app**
+```
 allorad init $MONIKER --chain-id $ALLORA_CHAIN_ID 
 allorad config set client chain-id allora-testnet-1
 allorad config set client keyring-backend os
 sed -i -e "s|^node *=.*|node = \"tcp://localhost:${ALLORA_PORT}657\"|" $HOME/.allorad/config/client.toml
+```
 
-# download genesis and addrbook
+**download genesis and addrbook**
+```
 wget -O $HOME/.allorad/config/genesis.json https://undefined/testnet/allora/genesis.json
 wget -O $HOME/.allorad/config/addrbook.json  https://undefined/testnet/allora/addrbook.json
+```
 
 # set seeds and peers
 SEEDS="720d83b52611c64d119adfc4d08d2e85885d8c74@allora-testnet-seed.itrocket.net:27656"
